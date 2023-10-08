@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<style>
+    .body {
+        background-image: url("images/back-1.png");
+        background-size: cover;
+        position: center;
+        min-height: 100%;
+        min-width: 100%;
+    }
+
+    .container {
+        background-image: linear-gradient(rgb(245, 245, 255), rgb(47, 169, 210));
+        width: 30%;
+        height: 65%;
+        max-width: 600px;
+        margin-left: 440px;
+        margin-top: 70px;
+        border-radius: 25px;
+        padding: 20px;
+        position: absolute;
+        animation: fadeInUp 2s ease;
+    }
+
+    .h1 {
+        margin-left: 170px;
+        margin-top: 2px;
+        color: rgb(10, 10, 10);
+        font-size: 35px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 600;
+        border-bottom: 2px;
+        padding-bottom: 30px;
+    }
+
+    .hr {
+        margin-top: -35px;
+    }
+
+    .app h2 {
+        font-size: 20px;
+        color: rgb(12, 12, 12);
+        margin-left: 10px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .btn:hover:not([disabled]) {
+        background-color: rgb(225, 239, 34);
+        color: black;
+    }
+
+    .btn:disabled {
+        cursor: no-drop;
+    }
+
+    .btn {
+        background-color: rgb(242, 242, 248);
+        color: rgb(5, 5, 5);
+        width: 80%;
+        border-radius: 15px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 18px;
+        font-weight: 500;
+        border: 5px;
+        padding: 10px;
+        margin: 10px;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    #next:hover {
+        background-color: rgb(249, 249, 249);
+        color:rgb(7, 7, 7);
+    }
+
+    #next {
+        color: rgb(250, 250, 255);
+        font-size: 15px;
+        font-weight: bold;
+        background-color: rgb(0, 4, 9);
+        width: 100px;
+        height: 35px;
+        border-radius: 3px;
+        margin-left: 150px;
+        margin-top: 5px;
+        cursor: pointer;
+        display: none;
+    }
+
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    .correct {
+        background-color: rgb(83, 185, 83);
+    }
+
+    .Incorrect {
+        background-color: rgb(205, 104, 104);
+    }
+
+    .blue {
+        color: rgb(17, 17, 21);
+    }
+</style>
+
+<body>
+
+    <body class="body">
+        <div class="container">
+            <h1 class="h1">Test</h1>
+            <hr class="hr">
+            <div class="app">
+                <h2 id="q">Question</h2>
+                <div id="ans_button">
+                    <button class="btn">Answer 1</button>
+                    <button class="btn">Answer 2</button>
+                    <button class="btn">Answer 3</button>
+                    <button class="btn">Answer 4</button>
+                </div>
+                <button id="next">Next</button>
+            </div>
+        </div>
+        <script>
+            alert("This test is basically to assess you in programming.")
+            //Making an object for storing all the questions name "Question
+            const Question = [
+                {
+                    question: "which command is used to debug and execute the java program",
+                    answers: [
+                        { option: "JDK", check: true },
+                        { option: "JRE", check: false },
+                        { option: "JVM", check: false },
+                        { option: "JIT", check: false },
+                    ]
+                },
+                {
+                    question: "We cannot use the keyword 'break' simply within",
+                    answers: [
+                        { option: "for", check: false },
+                        { option: "while", check: false },
+                        { option: "do-while", check: false },
+                        { option: "if-else", check: true },
+                    ]
+                },
+                {
+                    question: "which is the following is not a building block of an oop",
+                    answers: [
+                        { option: "Polymorphism", check: false },
+                        { option: "Constructor", check: true },
+                        { option: "Abstraction", check: false },
+                        { option: "Encapsulation", check: false },
+                    ]
+                },
+                {
+                    question: "In which of the following is not a access modifier",
+                    answers: [
+                        { option: "private", check: false },
+                        { option: "persistent", check: true },
+                        { option: "public", check: false },
+                        { option: "protected", check: false },
+                    ]
+                },
+                {
+                    question: "How many primitives data types in java?",
+                    answers: [
+                        { option: "9", check: false },
+                        { option: "8", check: true },
+                        { option: "6", check: false },
+                        { option: "5", check: false },
+                    ]
+                },
+                {
+                    question: "What is the default type of input in python",
+                    answers: [
+                        { option: "Int", check: false },
+                        { option: "Char", check: false },
+                        { option: "String", check: true },
+                        { option: "input", check: false },
+                    ]
+                },
+                {
+                    question: "Which is below is not a data structure",
+                    answers: [
+                        { option: "Sort", check: true },
+                        { option: "Graph", check: false },
+                        { option: "List", check: false },
+                        { option: "Tree", check: false },
+                    ]
+                },
+                {
+                    question: "Which environment variable is used to store a path to the java installation",
+                    answers: [
+                        { option: "MAVEN_PATH", check: false },
+                        { option: "JDK_PATH", check: false },
+                        { option: "JAVA", check: false },
+                        { option: "JAVA_HOME", check: true },
+                    ]
+                },
+                {
+                    question: "How to search for specific pattern in SQL",
+                    answers: [
+                        { option: "By using Like", check: true },
+                        { option: "By using Alias", check: false },
+                        { option: "By using Replace ", check: false },
+                        { option: "By using Pattern", check: false },
+                    ]
+                },
+                {
+                    question: "What normalization step conrtain full dependency",
+                    answers: [
+                        { option: "BCNF", check: false },
+                        { option: "1NF", check: false },
+                        { option: "2NF", check: true },
+                        { option: "4NF", check: false },
+                    ]
+                }
+
+            ]
+            const question = document.getElementById("q");
+            const button_to_answer = document.getElementById("ans_button");
+            const button_to_next = document.getElementById("next");
+
+            let current_question_index = 0;
+            let scoring = 0;
+            function play() {
+                current_question_index = 0;
+                scoring = 0;
+                button_to_next.innerHTML = "Next";
+                startQuiz();
+            }
+
+            function startQuiz() {
+                ResetQuestion();
+                let currentQuestion = Question[current_question_index];// contain entire first question and answer
+                let question_no = current_question_index + 1;
+                question.innerHTML = "Q" + question_no + ". " + currentQuestion.question;// contain only question using dot operator
+                currentQuestion.answers.forEach(answer => {
+                    const button = document.createElement("button"); //create a button tag and store it with the varible button
+                    button.innerHTML = answer.option; //button's text equals to option of the question
+                    button.classList.add("btn");// we give the class to button which is "btn" so now  itcontain the same styling
+                    button_to_answer.appendChild(button);// now we append the created button tag in to anwser_to_button
+                    if (answer.check) { // goes inside if the check is "true" from the answer
+                        button.dataset.check = answer.check;
+                    }
+                    button.addEventListener("click", checkAnswer)
+                });
+            }
+            function ResetQuestion() {
+                button_to_next.style.display = "none"; // style none of next buttob
+                while (button_to_answer.firstChild) { // removing the above child starting named ans buttons
+                    button_to_answer.removeChild(button_to_answer.firstChild);
+                }
+            }
+            function checkAnswer(e) {
+                const selectbtn = e.target;// contain the click button
+                const Is_correct = selectbtn.dataset.check === "true"; // checking whether this button key means option is correct
+                if (Is_correct) {
+                    selectbtn.classList.add("correct");// assigning the class correct
+                    scoring++
+                }
+                else {
+                    selectbtn.classList.add("Incorrect");//assigning the class incorrect
+                }
+                // now we are identifying that which answer button is true
+                Array.from(button_to_answer.children).forEach(button => {
+                    if (button.dataset.check == "true") { //looping through the options
+                        button.classList.add("correct"); //assigning the green color to  the correct answers after the user clicked it's option
+                    }
+                    button.disabled = "true"; //disabling the button after one button is pressed
+                });
+                button_to_next.style.display = "block";//showing the next button when user press his option to move to next question
+            }
+            function DisplayScore() { //display the score
+                ResetQuestion();  // reset the score and index
+                if (scoring <= 4 && scoring >= 3) {
+                    question.innerHTML = `you have slight knowledge of programming, scored ${scoring}/${Question.length}.`;
+
+                }
+                else if (scoring == 10) {
+                    question.innerHTML = `Congrats on Full marks, ${scoring}/${Question.length}`;
+                }
+                else if (scoring >= 5 && scoring <= 9) {
+                    question.innerHTML = `You are good at Programming, scored ${scoring}/${Question.length}`;
+                }
+                else {
+                    question.innerHTML = `You Failed this test, scored ${scoring}/${Question.length}.`;
+                }
+                button_to_next.innerHTML = "Test Again"; //next button text change to play Again
+                button_to_next.style.display = "block"; //showing the next button
+            }
+            function NextButton() {
+                current_question_index++; //increment the index
+                if (current_question_index < Question.length) {
+                    startQuiz(); //displaying the question according to index
+                }
+                else {
+                    DisplayScore(); //if question end then display the score
+                }
+            }
+            button_to_next.addEventListener("click", () => { // function when user click the next button
+                if (current_question_index < Question.length) { //checking if the question remain to ask from index
+                    NextButton(); // calling the NextButton function if question remains
+                }
+                else {
+                    play(); //other reseting index and score to zero
+                }
+            })
+            play();// calling the function "play"
+
+
+
+
+
+
+
+        </script>
+    </body>
+
+</html>

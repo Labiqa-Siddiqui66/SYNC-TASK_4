@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+<style>
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+  }
+
+  .main {
+    background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgba(5, 4, 46, 0.7)), url("images/back-1.png");
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+  }
+
+  .hero {
+    overflow: hidden;
+  }
+
+  .he h1 {
+    color: rgb(243, 242, 238);
+    font-size: 50px;
+    font-family: monospace;
+    text-align: center;
+    margin-top: 35px;
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 65px auto;
+  }
+
+  .herocontent {
+    flex: 1;
+    width: 600px;
+    margin: 0px 25px;
+    animation: fadeInUp 2s ease;
+  }
+
+  .herocontent h2 {
+    color: #f1ecd4;
+    font-size: 30px;
+    margin-bottom: 20px;
+
+  }
+
+  .herocontent p {
+    font-size: 18px;
+    line-height: 1.5;
+    word-spacing: 3px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 200;
+    margin-bottom: 40px;
+  }
+
+  .herocontent button {
+    display: inline-block;
+    color: black;
+    background-color: orange;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  .herocontent button a{
+    text-decoration: none;
+    color:white;
+  }
+  .herocontent button a:hover{
+    text-decoration: none;
+    color:rgb(0, 0, 0);
+  }
+  .herocontent button:hover {
+    background-color: white;
+    color:rgb(13, 13, 12);
+    transform: scale(1.1);
+  }
+  .hero-image {
+    flex: 1;
+    width: 600px;
+    margin: auto;
+    animation: fadeInRight 2s ease;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  @media screen and (max-width:768px) {
+    .he h1 {
+      font-size: 45px;
+      margin-top: 30px;
+    }
+
+    .hero {
+      margin: 0px;
+    }
+
+    .content {
+      width: 100%;
+      flex-direction: column;
+      margin: 0px;
+      padding: 0px 40px;
+    }
+
+    .herocontent {
+      width: 100px;
+      margin: 35px 0px;
+
+    }
+
+    .herocontent h2 {
+      font-size: 30px;
+    }
+
+    .herocontent p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .herocontent button {
+      font-size: 16px;
+      padding: 8px 16px;
+    }
+
+    .herocontent img {
+      width: 100%;
+   
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes fadeInRight {
+    0%{
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+
+    100%{
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+</style>
+
+<body>
+  <nav>
+    <img class="image" src="remove.png" alt="" />
+    <div class="navbar">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="course.html">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="admin.html">Dash Board</a></li>
+        <button class="button"><a href="login.html">Logout</a></button>
+      </ul>
+    </div>
+  </nav>
+  <div class="main">
+    <section class="hero">
+      <div class="he">
+        <h1>About us</h1>
+      </div>
+      <div class="content">
+        <div class="herocontent">
+          <h2>Our website provides best E-learning Facility</h2>
+          <p>
+            The main focus is to prepare those students so that they achieve their targets in life.Our mission is to
+            connect with more and more people and grow with each other, especially those who are always excited to learn
+            such things so that we make the best version of him.
+            ​</p>
+          <button class="cta-button"><a href="https://www.syncinterns.com/">Read MORE</a></button>
+        </div>
+        <div class="hero-image">
+          <img class="picture" src="about-2.jpg" alt="">
+        </div>
+      </div>
+  </div>
+  </section>
+
+</body>
+
+</html>

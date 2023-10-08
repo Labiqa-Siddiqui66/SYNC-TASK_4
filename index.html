@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="cards">
+            <div class="inner-box">
+                <div class="font"></div>
+                <div class="back"></div>
+                <h2 id="h2">SignUp</h2>
+                <form id="form" name="myFirstForm">
+                    <input id="name" type="text" class="input-box" placeholder="Enter Your Name" required>
+                    <input type="email" id="sign" class="input-box" placeholder="Enter your Email" required>
+                    <input id="regpass" type="password" class="input-box" placeholder="Enter Strong Password">
+                    <p class="p">We also provide you CV upload option based upon this we can recommend you latest our
+                        courses.</p>
+                    <input type="file" id="real-file" hidden="hidden" />
+                    <button type="button" id="custom-button">Upload CV</button>
+                    <span id="custom-text">No file chosen</span>
+                    <button type="submit" id="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+            <!----Uploading option-->
+        </div>
+    </div>
+    <script>
+        const realFileBtn = document.getElementById("real-file"); //getting these from html
+        const custometext = document.getElementById("custom-text");
+        const customBtn = document.getElementById("custom-button");
+        const h2 = document.getElementById("h2");
+        customBtn.addEventListener("click", function () {
+            realFileBtn.click(); //hmne input type="file" k through upload ka option banaya then ek button banaya aur onclick laga k bola k jb yeh click ho tw wo click hojaye
+        });
+        realFileBtn.addEventListener("change", function () { //jb wo button click hoga hidden vala tw wo uski value change hojaegi file k path k according
+            if (realFileBtn.value) {
+                custometext.innerHTML = realFileBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1]; // this is a regular expression help us to change the file path into file name after the upload button is pressed.
+            }
+            else {
+                custometext.innerHTML = "No file choosen";
+            }
+        });
+        const submit = document.getElementById("submit");
+        document.forms['myFirstForm'].addEventListener('submit', function (event) {
+            // Do something with the form's data here
+            this.style['display'] = 'none';
+            event.preventDefault();/*w  w w.  j av  a2s.c  o  m*/
+            h2.innerHTML = "Thankyou for Registeration";
+            const btn = document.createElement('button');
+            const anchor = document.createElement("a");
+            anchor.classList.add("tag");
+            btn.classList.add("bttn");
+            anchor.textContent = "Go to Login";
+            anchor.href = "login.html";
+            anchor.classList.add("tag");
+            h2.appendChild(btn);
+            btn.appendChild(anchor);
+
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>
